@@ -14,7 +14,8 @@
 
 // 思路：以led_num为循环条件，blink_led为被循环函数，led_num 与 times同步自增
 
-void blink_led(led_num, times, delay_ms)
+
+void blink_led(uint8_t led_num, uint16_t times, uint32_t delay_ms)
 {
 
   /* if 判断：LED 编号只允许 1~4 */
@@ -32,13 +33,13 @@ int main()
 {
     uint8_t  current_led = 1U;              /* 当前要操作的 LED 编号 */
     uint16_t blink_times = 1;               /* 每颗 LED 闪烁次数 */
-    uint32_t delay_ms    = DELAY_MS;        /* 亮/灭延时 */
+    uint32_t delay_ms    = DELAY_MS;    	/* 亮/灭延时 */
     const uint8_t led_count = LED_COUNT;    /* const 表示该变量不允许修改 */
-
+	
     int i = 0; // 循环次数
     for(current_led = 1U; current_led <= LED_COUNT; current_led++, blink_times++)
     {
-        void blink_led( led_num,  times, delay_ms);
+        blink_led(current_led, blink_times, delay_ms);
     }
     return 0;
 }

@@ -537,6 +537,16 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>New Group</GroupName>
+          <Files>
+            <File>
+              <FileName>LED_practice.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\Core\Src\LED_practice.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>::CMSIS</GroupName>
         </Group>
       </Groups>
