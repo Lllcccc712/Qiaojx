@@ -36,7 +36,7 @@
  */
 #include "buzzer.h"   /* 蜂鸣器驱动的函数声明 */
 #include "led.h"      /* LED 驱动的函数声明 */
-#include "alarm.h"
+
 // 在这里替换成#include user_beep.h
 
 /* USER CODE END Includes */
@@ -93,7 +93,7 @@ __weak void user_beep(){}
 #define DELAY_MS    250U  /* LED 亮/灭持续时间，单位毫秒 */
 #define BEEP_MS     120U  /* 蜂鸣器响一声的时长 */
 
-// 思路：以led_num为循环条件，blink_led为被循环函数，led_num 与 times同步自增
+
 
 
 void practice_blink_led(uint8_t led_num , uint8_t blink_times)
@@ -171,6 +171,9 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
+  uint8_t led_num = 0U; 
+
   while (1)
   {
     /* USER CODE END WHILE */

@@ -12,6 +12,14 @@
 extern "C" {
 #endif
 
+/*设置num的最值以支持4个LED*/
+#define LED_NUM_MIN 0U
+#define LED_NUM_MAX 3U
+
+/*用宏函数做编号越界检查*/
+#define check_num(num)   (((num) >= LED_NUM_MIN) && ((num) <= LED_NUM_MAX))
+
+
 /* 宏定义：给 LED 使用的端口和引脚起名字 */
 /* H7 板：4 颗 LED 依次接 PB3、PB4、PB5、PB6 */
 #define LED_GPIO_PORT GPIOB

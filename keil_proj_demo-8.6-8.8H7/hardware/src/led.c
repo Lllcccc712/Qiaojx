@@ -4,11 +4,16 @@
  */
 #include "led.h"
 
+
 /* 点亮指定编号的 LED */
 void led_on(uint8_t led_num)
 {
+    if(!check_num(led_num))
+    {
+        return;
+    }
     /* switch 根据 led_num 的值选择执行哪一个 case */
-    switch (led_num)
+    switch (led_num + 1)
     {
         case 1:
             HAL_GPIO_WritePin(LED_GPIO_PORT, LED1_PIN, GPIO_PIN_SET);
@@ -31,8 +36,12 @@ void led_on(uint8_t led_num)
 /* 熄灭指定编号的 LED */
 void led_off(uint8_t led_num)
 {
-    switch (led_num)
+    switch (led_num + 1)
     {
+         if(!check_num(led_num))
+          {
+            return;
+          }
         case 1:
             HAL_GPIO_WritePin(LED_GPIO_PORT, LED1_PIN, GPIO_PIN_RESET);
             break;
