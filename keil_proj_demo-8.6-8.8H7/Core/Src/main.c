@@ -177,9 +177,9 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    LED_Practice_Test();
+    void alarm_sys_func(led_num, mode);
     /* USER CODE BEGIN 3 */
-    current_led = 1U; /* 练习点：改成 2U，观察从哪颗 LED 开始 */
+   // current_led = 1U; /* 练习点：改成 2U，观察从哪颗 LED 开始 */
 
     /* while 循环：条件成立就反复执行 {} 里的代码 */
     // while (current_led <= led_count)
@@ -188,17 +188,17 @@ int main(void)
     //   current_led++; /* 等价于 current_led = current_led + 1 */
     // }
 
-//   beep(BEEP_MS);
+  // beep(BEEP_MS);
 
     /* if / else 判断：让延时每次变快一点，到 100 后重新回到初始值 */
-    if (delay_ms > 100U)
-    {
-      delay_ms -= 20U; /* 练习点：改成 += 20U 看速度变化方向 */
-    }
-    else
-    {
-      delay_ms = DELAY_MS;
-    }
+    // if (delay_ms > 100U)
+    // {
+    //   delay_ms -= 20U; /* 练习点：改成 += 20U 看速度变化方向 */
+    // }
+    // else
+    // {
+    //   delay_ms = DELAY_MS;
+    // }
   }
   /* USER CODE END 3 */
 }

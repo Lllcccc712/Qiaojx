@@ -4,8 +4,8 @@
 #include "main.h"  // 必须包含，因为要用到 uint8_t 等类型
 
 // 这里留空，准备写 3 个函数的声明
-void practice_blink_led(uint8_t led_num , uint8_t blink_times);
+void practice_blink_led(uint8_t led_num , uint8_t blink_times,uint32_t delay_ms);
 void beep(uint32_t beep_ms);
-void alarm_sys_func(...);
+void alarm_sys_func(uint8_t led_num, uint8_t mode);
 
 #endif
