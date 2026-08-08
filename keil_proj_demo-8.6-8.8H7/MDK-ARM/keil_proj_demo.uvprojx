@@ -540,11 +540,6 @@
           <GroupName>user</GroupName>
           <Files>
             <File>
-              <FileName>LED_practice_8.8.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\user\src\LED_practice_8.8.c</FilePath>
-            </File>
-            <File>
               <FileName>user_beep.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\user\src\user_beep.c</FilePath>
