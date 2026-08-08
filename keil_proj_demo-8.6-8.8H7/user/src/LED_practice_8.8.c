@@ -32,7 +32,7 @@ void blink_led(uint8_t led_num, uint16_t times, uint32_t delay_ms)
   }
 }
 
-int main()
+void LED_Practice_Test(void)
 {
     uint8_t  current_led = 1U;              /* 当前要操作的 LED 编号 */
     uint16_t blink_times = 1;               /* 每颗 LED 闪烁次数 */
@@ -44,5 +44,4 @@ int main()
         blink_led(current_led, blink_times, delay_ms);
         blink_times++;
     }
-    return 0;
 }

@@ -126,7 +126,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
+    LED_Practice_Test();
     /* USER CODE BEGIN 3 */
     current_led = 1U; /* 练习点：改成 2U，观察从哪颗 LED 开始 */
 

@@ -340,7 +340,7 @@
               <MiscControls></MiscControls>
               <Define>USE_PWR_LDO_SUPPLY,USE_HAL_DRIVER,STM32H723xx</Define>
               <Undefine></Undefine>
-              <IncludePath>../Core/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32H7xx/Include;../Drivers/CMSIS/Include;../hardware/inc</IncludePath>
+              <IncludePath>../Core/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc;../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy;../Drivers/CMSIS/Device/ST/STM32H7xx/Include;../Drivers/CMSIS/Include;../hardware/inc;..\Core\Inc;..\user\inc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -537,12 +537,17 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>New Group</GroupName>
+          <GroupName>user</GroupName>
           <Files>
             <File>
-              <FileName>LED_practice.c</FileName>
+              <FileName>LED_practice_8.8.c</FileName>
               <FileType>1</FileType>
-              <FilePath>..\Core\Src\LED_practice.c</FilePath>
+              <FilePath>..\user\src\LED_practice_8.8.c</FilePath>
+            </File>
+            <File>
+              <FileName>user_beep.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\user\src\user_beep.c</FilePath>
             </File>
           </Files>
         </Group>
@@ -565,5 +570,14 @@
     </components>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>keil_proj_demo</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>
