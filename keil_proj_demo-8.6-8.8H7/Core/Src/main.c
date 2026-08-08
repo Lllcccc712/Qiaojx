@@ -107,9 +107,9 @@ void practice_blink_led(uint8_t led_num , uint8_t blink_times)
   for(uint8_t i = 0; i < blink_times; i++)
     {
       led_on(led_num);          /* 点亮指定 LED */
-      HAL_Delay(100);      /* 延时一段时间 */
+      HAL_Delay(500);      /* 延时一段时间 */
       led_off(led_num);         /* 熄灭指定 LED */
-      HAL_Delay(100);
+      HAL_Delay(500);
   }
 }
 
@@ -117,7 +117,7 @@ void LED_Practice_Test(void)
 {
     uint8_t  current_led = 1U;              /* 当前要操作的 LED 编号 */
     uint16_t blink_times = 1;               /* 每颗 LED 闪烁次数 */
-    uint32_t delay_ms    = 100;    	/* 亮/灭延时 */
+    uint32_t delay_ms    = 500;    	/* 亮/灭延时 */
     const uint8_t led_count = LED_COUNT;    /* const 表示该变量不允许修改 */
 	
     for(current_led = 1U; current_led <= LED_COUNT; current_led++)
