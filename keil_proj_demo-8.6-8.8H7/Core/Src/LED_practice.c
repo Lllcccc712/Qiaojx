@@ -23,10 +23,13 @@ void blink_led(uint8_t led_num, uint16_t times, uint32_t delay_ms)
   {
     return; /* return 直接结束当前函数 */
   }
-    led_on(led_num);          /* 点亮指定 LED */
-    HAL_Delay(delay_ms);      /* 延时一段时间 */
-    led_off(led_num);         /* 熄灭指定 LED */
-    HAL_Delay(delay_ms);
+  for(uint8_t i = 0; i < times; i++)
+    {
+      led_on(led_num);          /* 点亮指定 LED */
+      HAL_Delay(delay_ms);      /* 延时一段时间 */
+      led_off(led_num);         /* 熄灭指定 LED */
+      HAL_Delay(delay_ms);
+  }
 }
 
 int main()
@@ -36,10 +39,10 @@ int main()
     uint32_t delay_ms    = DELAY_MS;    	/* 亮/灭延时 */
     const uint8_t led_count = LED_COUNT;    /* const 表示该变量不允许修改 */
 	
-    int i = 0; // 循环次数
-    for(current_led = 1U; current_led <= LED_COUNT; current_led++, blink_times++)
+    for(current_led = 1U; current_led <= LED_COUNT; current_led++)
     {
         blink_led(current_led, blink_times, delay_ms);
+        blink_times++;
     }
     return 0;
 }
