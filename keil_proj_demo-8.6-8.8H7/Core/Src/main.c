@@ -19,9 +19,10 @@
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "gpio.h"
-#include "alarm.h"
+
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "alarm.h"
 /*
  * 为什么调用自己的文件时，要先把 .c 文件加进 Keil 工程？
  * 1. Keil 不会自动扫描文件夹里的源码，只有 .uvprojx 中列出的 .c 文件才会参与编译；

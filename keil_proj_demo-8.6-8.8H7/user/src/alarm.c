@@ -28,6 +28,12 @@ void practice_blink_led(uint8_t led_num , uint8_t blink_times, uint32_t delay_ms
   }
 }
 
+void beep(uint32_t beep_ms)
+{
+  buzzer_on();          /* 打开蜂鸣器 */
+  HAL_Delay(beep_ms);   /* 保持响一段时间 */
+  buzzer_off();         /* 关闭蜂鸣器 */
+}
 
 void alarm_sys_func(uint8_t led_num, uint8_t mode)
 {
