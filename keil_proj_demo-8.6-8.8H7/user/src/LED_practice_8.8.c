@@ -41,7 +41,7 @@ void LED_Practice_Test(void)
 	
     for(current_led = 1U; current_led <= LED_COUNT; current_led++)
     {
-        practice_blink_led(current_led);
+        practice_blink_led(current_led, blink_times);
         blink_times++;
     }
 }
