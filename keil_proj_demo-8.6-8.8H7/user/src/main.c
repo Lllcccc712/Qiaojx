@@ -78,6 +78,50 @@ void beep(uint32_t beep_ms);
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
 __weak void user_beep(){}
+/* LED 按编号闪烁不同次数：LED1 闪 1 次、LED2 闪 2 次……
+
+要求：
+
+至少用到一个函数、一个循环、一个判断；*/
+
+#include "main.h"
+#include "gpio.h"
+#include "buzzer.h"   /* 蜂鸣器驱动的函数声明 */
+#include "led.h"      /* LED 驱动的函数声明 */
+#define LED_COUNT   4U    /* 板载 LED 数量，U 表示 unsigned 无符号数 */
+#define DELAY_MS    250U  /* LED 亮/灭持续时间，单位毫秒 */
+#define BEEP_MS     120U  /* 蜂鸣器响一声的时长 */
+
+void practice_blink_led(uint8_t led_num , uint8_t blink_times)
+{
+
+  /* if 判断：LED 编号只允许 1~4 */
+  if (led_num > LED_COUNT)
+  {
+    return; /* return 直接结束当前函数 */
+  }
+  for(uint8_t i = 0; i < blink_times; i++)
+    {
+      led_on(led_num);          /* 点亮指定 LED */
+      HAL_Delay(500);      /* 延时一段时间 */
+      led_off(led_num);         /* 熄灭指定 LED */
+      HAL_Delay(500);
+  }
+}
+
+void LED_Practice_Test(void)
+{
+    uint8_t  current_led = 1U;              /* 当前要操作的 LED 编号 */
+    uint16_t blink_times = 1;               /* 每颗 LED 闪烁次数 */
+    uint32_t delay_ms    = 500;    	/* 亮/灭延时 */
+    const uint8_t led_count = LED_COUNT;    /* const 表示该变量不允许修改 */
+	
+    for(current_led = 1U; current_led <= LED_COUNT; current_led++)
+    {
+        practice_blink_led(current_led, blink_times);
+        blink_times++;
+    }
+}
 /* USER CODE END 0 */
 
 /**
@@ -131,24 +175,24 @@ int main(void)
     current_led = 1U; /* 练习点：改成 2U，观察从哪颗 LED 开始 */
 
     /* while 循环：条件成立就反复执行 {} 里的代码 */
-    while (current_led <= led_count)
-    {
-      blink_led(current_led, blink_times, delay_ms);
-      current_led++; /* 等价于 current_led = current_led + 1 */
-    }
+   // while (current_led <= led_count)
+    //{
+      //blink_led(current_led, blink_times, delay_ms);
+      // current_led++; /* 等价于 current_led = current_led + 1 */
+   // }
 
-   beep(BEEP_MS);
+   // beep(BEEP_MS);
 
     /* if / else 判断：让延时每次变快一点，到 100 后重新回到初始值 */
-    if (delay_ms > 100U)
-    {
-      delay_ms -= 20U; /* 练习点：改成 += 20U 看速度变化方向 */
-    }
-    else
-    {
-      delay_ms = DELAY_MS;
-    }
-  }
+    // if (delay_ms > 100U)
+    // {
+    //  delay_ms -= 20U; /* 练习点：改成 += 20U 看速度变化方向 */
+   // }
+   // else
+    //{
+    //  delay_ms = DELAY_MS;
+   // }
+ // }
   /* USER CODE END 3 */
 }
 
@@ -213,25 +257,25 @@ void SystemClock_Config(void)
 
 /* USER CODE BEGIN 4 */
 /* 函数定义：这里才是函数的具体实现 */
-void blink_led(uint8_t led_num, uint16_t times, uint32_t delay_ms)
-{
-  uint16_t i = 0U; /* 循环计数变量 */
+// void blink_led(uint8_t led_num, uint16_t times, uint32_t delay_ms)
+// {
+//   uint16_t i = 0U; /* 循环计数变量 */
 
-  /* if 判断：LED 编号只允许 1~4 */
-  if (led_num > LED_COUNT)
-  {
-    return; /* return 直接结束当前函数 */
-  }
+//   /* if 判断：LED 编号只允许 1~4 */
+//   if (led_num > LED_COUNT)
+//   {
+//     return; /* return 直接结束当前函数 */
+//   }
 
-  /* for 循环：初始化; 判断条件; 每次循环后执行 */
-  for (i = 0U; i < times; i++)
-  {
-    led_on(led_num);          /* 点亮指定 LED */
-    HAL_Delay(delay_ms);      /* 延时一段时间 */
-    led_off(led_num);         /* 熄灭指定 LED */
-    HAL_Delay(delay_ms);
-  }
-}
+//   /* for 循环：初始化; 判断条件; 每次循环后执行 */
+//   for (i = 0U; i < times; i++)
+//   {
+//     led_on(led_num);          /* 点亮指定 LED */
+//     HAL_Delay(delay_ms);      /* 延时一段时间 */
+//     led_off(led_num);         /* 熄灭指定 LED */
+//     HAL_Delay(delay_ms);
+//   }
+// }
 
 void beep(uint32_t beep_ms)
 {
