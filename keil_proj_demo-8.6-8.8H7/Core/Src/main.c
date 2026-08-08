@@ -173,6 +173,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
 
   uint8_t led_num = 0U; 
+  uint8_t mode = 1U; 
 
   while (1)
   {
