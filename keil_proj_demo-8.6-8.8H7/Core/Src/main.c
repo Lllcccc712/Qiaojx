@@ -177,7 +177,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-    void alarm_sys_func(led_num, mode);
+    alarm_sys_func(led_num, mode);
     /* USER CODE BEGIN 3 */
    // current_led = 1U; /* 练习点：改成 2U，观察从哪颗 LED 开始 */
 
