@@ -36,7 +36,7 @@ void LED_Practice_Test(void)
 {
     uint8_t  current_led = 1U;              /* 当前要操作的 LED 编号 */
     uint16_t blink_times = 1;               /* 每颗 LED 闪烁次数 */
-    uint32_t delay_ms    = DELAY_MS;    	/* 亮/灭延时 */
+    uint32_t delay_ms    = 100;    	/* 亮/灭延时 */
     const uint8_t led_count = LED_COUNT;    /* const 表示该变量不允许修改 */
 	
     for(current_led = 1U; current_led <= LED_COUNT; current_led++)
