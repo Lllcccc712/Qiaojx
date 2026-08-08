@@ -15,7 +15,7 @@
 // 思路：以led_num为循环条件，blink_led为被循环函数，led_num 与 times同步自增
 
 
-void practice_blink_led(uint8_t led_num)
+void practice_blink_led(uint8_t led_num , uint8_t blink_times)
 {
 
   /* if 判断：LED 编号只允许 1~4 */
@@ -23,7 +23,7 @@ void practice_blink_led(uint8_t led_num)
   {
     return; /* return 直接结束当前函数 */
   }
-  for(uint8_t i = 0; i < LED_COUNT; i++)
+  for(uint8_t i = 0; i < blink_times; i++)
     {
       led_on(led_num);          /* 点亮指定 LED */
       HAL_Delay(100);      /* 延时一段时间 */
