@@ -15,7 +15,7 @@
 // 思路：以led_num为循环条件，blink_led为被循环函数，led_num 与 times同步自增
 
 
-void blink_led(uint8_t led_num, uint16_t times, uint32_t delay_ms)
+void practice_blink_led(uint8_t led_num, uint8_t times)
 {
 
   /* if 判断：LED 编号只允许 1~4 */
@@ -41,7 +41,7 @@ void LED_Practice_Test(void)
 	
     for(current_led = 1U; current_led <= LED_COUNT; current_led++)
     {
-        blink_led(current_led, blink_times, delay_ms);
+        practice_blink_led(current_led, blink_times, delay_ms);
         blink_times++;
     }
 }

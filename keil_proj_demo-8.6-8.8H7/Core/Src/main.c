@@ -69,6 +69,7 @@
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MPU_Config(void);
+void LED_Practice_Test(void);
 /* USER CODE BEGIN PFP */
 /* 函数声明（原型）：告诉编译器函数名、参数和返回值，定义在下方 USER CODE 4 */
 void blink_led(uint8_t led_num, uint16_t times, uint32_t delay_ms);
